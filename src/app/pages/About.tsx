@@ -1,7 +1,10 @@
 import { Users, Heart, Award, Handshake } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { useTranslation } from '../hooks/useTranslation';
 
 export function About() {
+  const t = useTranslation();
+  
   return (
     <div>
       {/* Hero Section */}
@@ -17,10 +20,10 @@ export function About() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-serif text-white mb-4">
-            About Us
+            {t.about.title}
           </h1>
           <p className="text-xl text-neutral-200 max-w-2xl mx-auto">
-            Connecting Madagascar's finest vanilla farmers with the world
+            {t.about.subtitle}
           </p>
         </div>
       </section>
@@ -31,25 +34,17 @@ export function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-serif text-amber-900 mb-6">
-                Our Story
+                {t.about.ourStoryTitle}
               </h2>
               <div className="space-y-4 text-lg text-neutral-700">
                 <p>
-                  Madagascar Vanilla Co. was founded on a simple belief: the world's 
-                  finest vanilla deserves to be sourced with integrity, respect, and 
-                  a commitment to excellence.
+                  {t.about.ourStoryP1}
                 </p>
                 <p>
-                  We work directly with local farmers across Madagascar, building 
-                  long-term relationships based on trust and mutual success. By 
-                  cutting out middlemen, we ensure farmers receive fair compensation 
-                  while delivering unmatched quality to our clients.
+                  {t.about.ourStoryP2}
                 </p>
                 <p>
-                  Every vanilla bean we export tells a story of dedication—from the 
-                  careful hand-pollination of vanilla orchids to the meticulous 
-                  months-long curing process. We're proud to share Madagascar's 
-                  vanilla legacy with businesses and chefs around the world.
+                  {t.about.ourStoryP3}
                 </p>
               </div>
             </div>
@@ -70,32 +65,18 @@ export function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-serif text-amber-900 mb-4">
-              Our Values
+              {t.about.ourValuesTitle}
             </h2>
-            <p className="text-lg text-neutral-700 max-w-2xl mx-auto">
-              What drives us every day
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white rounded-lg p-8 text-center shadow-sm">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4">
-                <Heart className="text-amber-900" size={32} />
-              </div>
-              <h3 className="text-xl text-neutral-900 mb-3">Ethical Sourcing</h3>
-              <p className="text-neutral-600">
-                Fair partnerships with farmers, ensuring sustainable livelihoods 
-                and community growth.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-8 text-center shadow-sm">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4">
                 <Award className="text-amber-900" size={32} />
               </div>
-              <h3 className="text-xl text-neutral-900 mb-3">Premium Quality</h3>
+              <h3 className="text-xl text-neutral-900 mb-3">{t.about.qualityFirst}</h3>
               <p className="text-neutral-600">
-                Rigorous quality control at every stage, from harvest to export.
+                {t.about.qualityFirstDesc}
               </p>
             </div>
 
@@ -103,10 +84,19 @@ export function About() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4">
                 <Handshake className="text-amber-900" size={32} />
               </div>
-              <h3 className="text-xl text-neutral-900 mb-3">Long-Term Partnerships</h3>
+              <h3 className="text-xl text-neutral-900 mb-3">{t.about.fairTrade}</h3>
               <p className="text-neutral-600">
-                Building lasting relationships with farmers and clients based on 
-                trust and reliability.
+                {t.about.fairTradeDesc}
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg p-8 text-center shadow-sm">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4">
+                <Heart className="text-amber-900" size={32} />
+              </div>
+              <h3 className="text-xl text-neutral-900 mb-3">{t.about.sustainability}</h3>
+              <p className="text-neutral-600">
+                {t.about.sustainabilityDesc}
               </p>
             </div>
 
@@ -114,40 +104,34 @@ export function About() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4">
                 <Users className="text-amber-900" size={32} />
               </div>
-              <h3 className="text-xl text-neutral-900 mb-3">Community Focus</h3>
+              <h3 className="text-xl text-neutral-900 mb-3">{t.about.transparency}</h3>
               <p className="text-neutral-600">
-                Supporting local communities and preserving Madagascar's vanilla-growing 
-                traditions.
+                {t.about.transparencyDesc}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Madagascar Origin */}
+      {/* Team & Certification */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-serif text-amber-900 mb-6">
-              Why Madagascar?
-            </h2>
-            <div className="text-lg text-neutral-700 space-y-4">
-              <p>
-                Madagascar is home to the world's most sought-after vanilla. The 
-                island's unique terroir—combining tropical climate, rich volcanic 
-                soil, and traditional growing methods—produces vanilla beans with 
-                exceptional flavor complexity and aromatic intensity.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl font-serif text-amber-900 mb-6">
+                {t.about.ourTeamTitle}
+              </h2>
+              <p className="text-lg text-neutral-700">
+                {t.about.ourTeamDesc}
               </p>
-              <p>
-                The Bourbon vanilla variety grown in Madagascar is renowned for its 
-                sweet, creamy flavor profile with notes of caramel and chocolate. 
-                This is the gold standard that chefs, pastry makers, and food 
-                manufacturers seek for their premium products.
-              </p>
-              <p>
-                By partnering with us, you're not just getting vanilla—you're 
-                getting a piece of Madagascar's rich agricultural heritage and the 
-                expertise of generations of vanilla growers.
+            </div>
+            
+            <div>
+              <h2 className="text-3xl font-serif text-amber-900 mb-6">
+                {t.about.certifiedTitle}
+              </h2>
+              <p className="text-lg text-neutral-700">
+                {t.about.certifiedDesc}
               </p>
             </div>
           </div>

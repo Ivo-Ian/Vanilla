@@ -1,141 +1,113 @@
 import { Send } from 'lucide-react';
-import { ContactFormData } from '../hooks/useContactForm';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useContactForm } from '../hooks/useContactForm';
 
-interface ContactFormProps {
-  formData: ContactFormData;
-  isSubmitted: boolean;
-  handleSubmit: (e: React.FormEvent) => void;
-  handleChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => void;
-}
+export function ContactForm() {
+  const t = useTranslation();
+  const { formData, isSubmitted, handleChange, handleSubmit } = useContactForm();
 
-export function ContactForm({
-  formData,
-  isSubmitted,
-  handleSubmit,
-  handleChange,
-}: ContactFormProps) {
-  if (isSubmitted) {
-    return (
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-          <Send className="text-green-600" size={32} />
-        </div>
-        <h3 className="text-xl text-green-900 mb-2">Thank You!</h3>
-        <p className="text-green-700">
-          Your message has been sent. We'll contact you shortly.
-        </p>
-      </div>
-    );
-  }
+  const productOptions = [
+    { value: 'grade-a', label: t.contact.formProductGradeA },
+    { value: 'grade-b', label: t.contact.formProductGradeB },
+    { value: 'powder', label: t.contact.formProductPowder },
+    { value: 'paste', label: t.contact.formProductPaste },
+    { value: 'other', label: t.contact.formProductOther },
+  ];
+
+  const inputClass =
+    'w-full px-4 py-3 border border-neutral-300 rounded focus:ring-2 focus:ring-amber-600 focus:border-transparent';
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label htmlFor="name" className="block text-sm text-neutral-700 mb-2">
-          Full Name *
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-neutral-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
-          placeholder="Your name"
-        />
-      </div>
+    <div className="bg-neutral-50 rounded-lg p-8">
+      <h2 className="text-3xl font-serif text-amber-900 mb-4">{t.contact.formTitle}</h2>
 
-      <div>
-        <label htmlFor="email" className="block text-sm text-neutral-700 mb-2">
-          Email Address *
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-neutral-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
-          placeholder="your@email.com"
-        />
-      </div>
+      {isSubmitted ? (
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+          <div className="text-green-700 text-lg font-medium mb-2">
+            Thank you for your inquiry!
+          </div>
+          <p className="text-green-600">We'll get back to you within 24 hours.</p>
+        </div>
+      ) : (
+        <>
+          <p className="text-neutral-700 mb-6">{t.contact.formDesc}</p>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
+                {t.contact.formName}
+              </label>
+              <input type="text" id="name" name="name" value={formData.name}
+                onChange={handleChange} required placeholder={t.contact.formNamePlaceholder}
+                className={inputClass} />
+            </div>
 
-      <div>
-        <label htmlFor="company" className="block text-sm text-neutral-700 mb-2">
-          Company Name
-        </label>
-        <input
-          type="text"
-          id="company"
-          name="company"
-          value={formData.company}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-neutral-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
-          placeholder="Your company"
-        />
-      </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
+                {t.contact.formEmail}
+              </label>
+              <input type="email" id="email" name="email" value={formData.email}
+                onChange={handleChange} required placeholder={t.contact.formEmailPlaceholder}
+                className={inputClass} />
+            </div>
 
-      <div>
-        <label htmlFor="phone" className="block text-sm text-neutral-700 mb-2">
-          Phone / WhatsApp
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-neutral-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
-          placeholder="+1 (555) 000-0000"
-        />
-      </div>
+            <div>
+              <label htmlFor="company" className="block text-sm font-medium text-neutral-700 mb-2">
+                {t.contact.formCompany}
+              </label>
+              <input type="text" id="company" name="company" value={formData.company}
+                onChange={handleChange} placeholder={t.contact.formCompanyPlaceholder}
+                className={inputClass} />
+            </div>
 
-      <div>
-        <label htmlFor="quantity" className="block text-sm text-neutral-700 mb-2">
-          Estimated Quantity (kg)
-        </label>
-        <select
-          id="quantity"
-          name="quantity"
-          value={formData.quantity}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-neutral-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
-        >
-          <option value="">Select quantity range</option>
-          <option value="50-100">50-100 kg</option>
-          <option value="100-250">100-250 kg</option>
-          <option value="250-500">250-500 kg</option>
-          <option value="500+">500+ kg</option>
-        </select>
-      </div>
+            <div>
+              <label htmlFor="country" className="block text-sm font-medium text-neutral-700 mb-2">
+                {t.contact.formCountry}
+              </label>
+              <input type="text" id="country" name="country" value={formData.country}
+                onChange={handleChange} placeholder={t.contact.formCountryPlaceholder}
+                className={inputClass} />
+            </div>
 
-      <div>
-        <label htmlFor="message" className="block text-sm text-neutral-700 mb-2">
-          Message *
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          required
-          value={formData.message}
-          onChange={handleChange}
-          rows={6}
-          className="w-full px-4 py-3 border border-neutral-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent resize-none"
-          placeholder="Tell us about your vanilla needs, preferred grade, delivery location, etc."
-        />
-      </div>
+            <div>
+              <label htmlFor="product" className="block text-sm font-medium text-neutral-700 mb-2">
+                {t.contact.formProduct}
+              </label>
+              <select id="product" name="product" value={formData.product}
+                onChange={handleChange} className={inputClass}>
+                <option value="">{t.contact.formProduct}</option>
+                {productOptions.map(({ value, label }) => (
+                  <option key={value} value={value}>{label}</option>
+                ))}
+              </select>
+            </div>
 
-      <button
-        type="submit"
-        className="w-full py-4 bg-amber-900 hover:bg-amber-800 text-white rounded transition-colors flex items-center justify-center space-x-2"
-      >
-        <span>Send Message</span>
-        <Send size={20} />
-      </button>
-    </form>
+            <div>
+              <label htmlFor="quantity" className="block text-sm font-medium text-neutral-700 mb-2">
+                {t.contact.formQuantity}
+              </label>
+              <input type="text" id="quantity" name="quantity" value={formData.quantity}
+                onChange={handleChange} placeholder={t.contact.formQuantityPlaceholder}
+                className={inputClass} />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-2">
+                {t.contact.formMessage}
+              </label>
+              <textarea id="message" name="message" value={formData.message}
+                onChange={handleChange} rows={4}
+                placeholder={t.contact.formMessagePlaceholder}
+                className={inputClass} />
+            </div>
+
+            <button type="submit"
+              className="w-full bg-amber-900 hover:bg-amber-800 text-white py-4 rounded transition-colors flex items-center justify-center">
+              <Send className="mr-2" size={20} />
+              {t.contact.formSubmit}
+            </button>
+          </form>
+        </>
+      )}
+    </div>
   );
 }

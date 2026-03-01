@@ -1,11 +1,11 @@
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { useContactForm } from './contact/hooks/useContactForm';
-import { ContactForm } from './contact/components/ContactForm';
+import { useTranslation } from '../hooks/useTranslation';
 import { ContactInfo } from './contact/components/ContactInfo';
-import { ExportInfo } from './contact/components/ExportInfo';
+import { ContactForm } from './contact/components/ContactForm';
+import { BeforeOrderSection } from './contact/components/BeforeOrderSection';
 
 export function Contact() {
-  const { formData, isSubmitted, handleSubmit, handleChange } = useContactForm();
+  const t = useTranslation();
 
   return (
     <div>
@@ -19,48 +19,26 @@ export function Contact() {
           />
           <div className="absolute inset-0 bg-neutral-900/70"></div>
         </div>
-        
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-serif text-white mb-4">
-            Contact Us
+            {t.contact.title}
           </h1>
           <p className="text-xl text-neutral-200 max-w-2xl mx-auto">
-            Let's discuss your vanilla needs
+            {t.contact.subtitle}
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-serif text-amber-900 mb-6">
-                Request a Quote
-              </h2>
-              <p className="text-neutral-700 mb-8">
-                Fill out the form below and we'll get back to you within 24-48 hours 
-                with a detailed quote. For urgent inquiries, please contact us via 
-                WhatsApp or email.
-              </p>
-
-              <ContactForm
-                formData={formData}
-                isSubmitted={isSubmitted}
-                handleSubmit={handleSubmit}
-                handleChange={handleChange}
-              />
-            </div>
-
-            {/* Contact Information */}
             <ContactInfo />
+            <ContactForm />
           </div>
         </div>
       </section>
 
-      {/* Export Info */}
-      <ExportInfo />
+      <BeforeOrderSection />
     </div>
   );
 }
