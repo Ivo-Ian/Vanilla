@@ -32,6 +32,29 @@ export function useContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const subject = encodeURIComponent(`Inquiry from ${formData.name} - ${formData.company}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Company: ${formData.company}\n` +
+      `Country: ${formData.country}\n` +
+      `Product: ${formData.product}\n` +
+      `Quantity: ${formData.quantity}\n\n` +
+      `Message:\n${formData.message}`
+    );
+
+    const mailtoUrl = `mailto:hrstrans@yahoo.fr?subject=${subject}&body=${body}`;
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = mailtoUrl;
+    document.body.appendChild(iframe);
+    
+    // Clean up
+    setTimeout(() => {
+      document.body.removeChild(iframe);
+    }, 100);
+
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
