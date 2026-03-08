@@ -3,6 +3,16 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useTranslation } from '../hooks/useTranslation';
 import { ProcessStep } from './process/components/ProcessStep';
 
+// Import local photos
+import photo1 from '../../photos/1.jpg';
+import photo2 from '../../photos/2.jpg';
+import photo3 from '../../photos/3.jpg';
+import photo4 from '../../photos/4.jpg';
+import photo5 from '../../photos/5.jpg';
+import photo6 from '../../photos/6.jpg';
+import photo7 from '../../photos/7.jpg';
+import photo8 from '../../photos/8.png';
+
 export function Process() {
   const t = useTranslation();
 
@@ -11,39 +21,67 @@ export function Process() {
       title: t.process.cultivationTitle,
       description: t.process.cultivationDesc,
       icon: Flower,
-      image: 'https://images.unsplash.com/photo-1672594429262-ceda365f82c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2YW5pbGxhJTIwZmxvd2VyJTIwb3JjaGlkfGVufDF8fHx8MTc3MjI4MzM3MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      imageAlt: 'Vanilla orchid',
+      images: [
+        {
+          url: photo1,
+          alt: 'Vanilla orchid cultivation',
+        },
+        {
+          url: photo5,
+          alt: 'Vanilla plantation',
+        },
+        {
+          url: photo4,
+          alt: 'Vanilla plantation',
+        }
+      ],
       reversed: false,
     },
     {
       title: t.process.harvestTitle,
       description: t.process.harvestDesc,
       icon: Package,
-      image: 'https://images.unsplash.com/photo-1674653495432-732d7328fa5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kcyUyMGhhcnZlc3RpbmclMjBhZ3JpY3VsdHVyZXxlbnwxfHx8fDE3NzIyODMzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      imageAlt: 'Harvesting',
+      images: [
+        {
+          url: photo4,
+          alt: 'Harvesting vanilla beans',
+        }
+      ],
       reversed: true,
     },
     {
       title: t.process.curingTitle,
       description: t.process.curingDesc,
       icon: Droplets,
-      image: 'https://images.unsplash.com/photo-1762380832403-ca2c91505e64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkcnlpbmclMjB2YW5pbGxhJTIwYmVhbnMlMjBwcm9jZXNzfGVufDF8fHx8MTc3MjI4MzM3Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      imageAlt: 'Vanilla processing',
+      images: [
+        {
+          url: photo6,
+          alt: 'Vanilla beans drying in the sun',
+        }
+      ],
       reversed: false,
     },
     {
       title: t.process.sortingTitle,
       description: t.process.sortingDesc,
       icon: CheckCircle,
-      image: 'https://images.unsplash.com/photo-1512372388054-a322888e67a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwdmFuaWxsYSUyMGJlYW5zJTIwcG9kc3xlbnwxfHx8fDE3NzIyODMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      imageAlt: 'Vanilla beans',
+      images:  [
+        {
+          url: photo2,
+          alt: 'Vanilla beans drying in the sun',
+        },{
+          url: photo3,
+          alt: 'Vanilla beans drying in the sun',
+        }
+      ],
+      imageAlt: 'Sorting and grading vanilla beans',
       reversed: true,
     },
     {
       title: t.process.qualityTitle,
       description: t.process.qualityDesc,
       icon: Sun,
-      image: 'https://images.unsplash.com/photo-1697546312799-e46bcbd73ed6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBmb29kJTIwc3BpY2VzJTIwYmFja2dyb3VuZHxlbnwxfHx8fDE3NzIyODMzNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: photo3,
       imageAlt: 'Spices and vanilla',
       reversed: false,
     },
@@ -51,7 +89,8 @@ export function Process() {
       title: t.process.packagingTitle,
       description: t.process.packagingDesc,
       icon: Wind,
-      isPlaceholder: true,
+      image: photo8,
+      imageAlt: 'Vacuum sealed vanilla packaging',
       reversed: true,
     },
   ];
@@ -87,6 +126,7 @@ export function Process() {
                 description={step.description}
                 image={step.image}
                 imageAlt={step.imageAlt}
+                images={step.images}
                 isPlaceholder={step.isPlaceholder}
                 reversed={step.reversed}
               />
