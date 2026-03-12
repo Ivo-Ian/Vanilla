@@ -16,9 +16,9 @@ export function Home() {
   ];
 
   const featuredProducts = [
-    { name: t.home.gourmetBeans, description: t.home.gourmetBeansDesc },
-    { name: t.home.extractGrade, description: t.home.extractGradeDesc },
-    { name: t.home.vanillaPowder, description: t.home.vanillaPowderDesc },
+    { name: t.home.featTkNoir, description: t.home.featTkNoirDesc },
+    { name: t.home.featGourmet, description: t.home.featGourmetDesc },
+    { name: t.home.featPowder, description: t.home.featPowderDesc },
   ];
 
   return (

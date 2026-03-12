@@ -1,4 +1,4 @@
-import { Flower, Sun, Droplets, Wind, Package, CheckCircle } from 'lucide-react';
+import { Flower, Sun, Droplets, Wind, Package, CheckCircle, Images } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useTranslation } from '../hooks/useTranslation';
 import { ProcessStep } from './process/components/ProcessStep';
@@ -12,6 +12,9 @@ import photo5 from '../../photos/5.jpg';
 import photo6 from '../../photos/6.jpg';
 import photo7 from '../../photos/7.jpg';
 import photo8 from '../../photos/8.png';
+import packaging from '../../photos/packaging.jpg';
+import certificat from '../../photos/certificat.png';
+
 
 export function Process() {
   const t = useTranslation();
@@ -67,9 +70,6 @@ export function Process() {
       icon: CheckCircle,
       images:  [
         {
-          url: photo2,
-          alt: 'Vanilla beans drying in the sun',
-        },{
           url: photo3,
           alt: 'Vanilla beans drying in the sun',
         }
@@ -81,7 +81,15 @@ export function Process() {
       title: t.process.qualityTitle,
       description: t.process.qualityDesc,
       icon: Sun,
-      image: photo3,
+      images: [ 
+        {
+          url : photo3,
+          alt: 'Vanilla beans drying in the sun',
+        },{
+          url: certificat,
+          alt: 'Vanilla quality certificate',
+        }
+      ],
       imageAlt: 'Spices and vanilla',
       reversed: false,
     },
@@ -89,7 +97,16 @@ export function Process() {
       title: t.process.packagingTitle,
       description: t.process.packagingDesc,
       icon: Wind,
-      image: photo8,
+      images:  [ 
+        {
+          url: photo2,
+          alt: 'Spices and vanilla',
+        } ,
+          { 
+          url: packaging,
+          alt: 'Vacuum sealed vanilla packaging',
+        },
+      ],
       imageAlt: 'Vacuum sealed vanilla packaging',
       reversed: true,
     },
