@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Add your production sitemap URL once domain is finalized.
-# Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://vanilla.hrsmg.com/sitemap.xml

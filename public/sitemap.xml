@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home Page -->
+  <url>
+    <loc>https://vanilla.hrsmg.com/</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vanilla.hrsmg.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vanilla.hrsmg.com/"/>
+    <xhtml:link rel="alternate" hreflang="mg" href="https://vanilla.hrsmg.com/"/>
+  </url>
+  <!-- About Page -->
+  <url>
+    <loc>https://vanilla.hrsmg.com/about</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Process Page -->
+  <url>
+    <loc>https://vanilla.hrsmg.com/process</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Products Page -->
+  <url>
+    <loc>https://vanilla.hrsmg.com/products</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Why Choose Us Page -->
+  <url>
+    <loc>https://vanilla.hrsmg.com/why-choose-us</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Contact Page -->
+  <url>
+    <loc>https://vanilla.hrsmg.com/contact</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

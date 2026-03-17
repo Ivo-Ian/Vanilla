@@ -42,40 +42,41 @@ export function SeoMeta() {
   const t = useTranslation();
 
   useEffect(() => {
-    const baseUrl = window.location.origin;
+    const domain = 'vanilla.hrsmg.com';
+    const baseUrl = `https://${domain}`;
     const canonical = `${baseUrl}${pathname}`;
     const ogImage = 'https://images.unsplash.com/photo-1512372388054-a322888e67a6?auto=format&fit=crop&w=1200&q=80';
 
     const pages: Record<string, { title: string; description: string }> = {
       '/': {
-        title: `${t.home.heroTitle} | Madagascar Vanilla Exportation`,
-        description: `${t.home.heroSubtitle} Premium vanilla from Madagascar with strict quality standards.`,
+        title: `${t.home.heroTitle} | PREMIUM MADAGASCAR VANILLA EXPORTATION`,
+        description: `${t.home.heroSubtitle} Direct Madagascar bean exportation with guaranteed high quality.`,
       },
       '/about': {
-        title: `${t.about.title} | Vanilla Quality from Madagascar`,
-        description: `${t.about.subtitle}. Trusted vanilla exportation partner focused on quality.`,
+        title: `${t.about.title} | MALAGASY VANILLA EXPORT EXPERTISE`,
+        description: `${t.about.subtitle}. Professional Madagascar vanilla beans exportation with focus on certification and quality.`,
       },
       '/process': {
-        title: `${t.process.title} | Vanilla Quality Process`,
-        description: `${t.process.subtitle}. Traditional process for export-ready quality vanilla.`,
+        title: `${t.process.title} | TRADITIONAL VANILLA QUALITY PROCESS`,
+        description: `${t.process.subtitle}. Authentic Madagascar process from curing to vacuum packaging for international exportation.`,
       },
       '/products': {
-        title: `${t.products.title} | Madagascar Vanilla Exportation`,
-        description: `${t.products.subtitle}. Vanilla beans, powder, and seeds with FOB references and consistent quality.`,
+        title: `${t.products.title} | GRADE A/B/C VANILLA BEANS EXPORT`,
+        description: `${t.products.subtitle}. Buy premium Madagascar beans, powder, and seeds for global exportation. Best prices for quality vanilla.`,
       },
       '/why-choose-us': {
-        title: `${t.whyChooseUs.title} | Quality Vanilla Supplier`,
-        description: `${t.whyChooseUs.subtitle}. Reliable Madagascar vanilla exportation and quality control.`,
+        title: `${t.whyChooseUs.title} | RELIABLE VANILLA QUALITY SUPPLIER`,
+        description: `${t.whyChooseUs.subtitle}. Why we are the preferred partner for Madagascar vanilla exportation and high quality worldwide.`,
       },
       '/contact': {
-        title: `${t.contact.title} | Vanilla Exportation Contact`,
-        description: `${t.contact.subtitle}. Contact us for Madagascar vanilla exportation and quality supply.`,
+        title: `${t.contact.title} | MADAGASCAR VANILLA CONTACT & EXPORT`,
+        description: `${t.contact.subtitle}. Reach out to our Madagascar office for wholesale vanilla exportation and quality samples.`,
       },
     };
 
     const fallback = {
-      title: 'HRS Vanilla | Vanilla Exportation & Quality',
-      description: 'Premium vanilla from Madagascar for exportation with consistent quality standards.',
+      title: 'HRS VANILLA | PREMIUM MADAGASCAR VANILLA EXPORT & QUALITY',
+      description: 'Expert Madagascar vanilla exportation service providing high-quality pods, powder, and seeds globally.',
     };
 
     const { title, description } = pages[pathname] ?? fallback;
@@ -84,15 +85,15 @@ export function SeoMeta() {
     document.title = title;
 
     setMeta('name', 'description', description);
-    setMeta('name', 'keywords', 'vanilla, madagascar, exportation, quality, bourbon vanilla, vanilla beans');
-    setMeta('name', 'robots', 'index, follow, max-image-preview:large');
+    setMeta('name', 'keywords', 'vanilla, madagascar, exportation, quality, bourbon vanilla, vanilla beans, wholesale vanilla, grade A vanilla, vanilla seeds');
+    setMeta('name', 'robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
 
     setMeta('property', 'og:type', 'website');
     setMeta('property', 'og:title', title);
     setMeta('property', 'og:description', description);
     setMeta('property', 'og:url', canonical);
     setMeta('property', 'og:image', ogImage);
-    setMeta('property', 'og:site_name', 'HRS Vanilla');
+    setMeta('property', 'og:site_name', 'HRS Vanilla Madagascar');
     setMeta('property', 'og:locale', language === 'fr' ? 'fr_FR' : language === 'mg' ? 'mg_MG' : 'en_US');
 
     setMeta('name', 'twitter:card', 'summary_large_image');
@@ -108,17 +109,24 @@ export function SeoMeta() {
 
     setJsonLd('org-jsonld', {
       '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: 'HRS Vanilla',
+      '@type': 'ProfessionalService',
+      name: 'HRS Vanilla Madagascar',
       url: baseUrl,
       email: 'soloniaina@hrsmg.com',
       telephone: '+261332060213',
+      logo: `${baseUrl}/logo.png`,
+      image: ogImage,
+      description: fallback.description,
       address: {
         '@type': 'PostalAddress',
         addressRegion: 'SAVA',
         addressCountry: 'MG',
       },
       areaServed: 'Worldwide',
+      serviceType: 'Vanilla Exportation and Quality Control',
+      currenciesAccepted: 'USD, EUR',
+      openingHours: 'Mo,Tu,We,Th,Fr 08:00-17:00',
+      priceRange: '$$$',
       keywords: ['vanilla', 'madagascar', 'exportation', 'quality'],
     });
 
@@ -128,6 +136,11 @@ export function SeoMeta() {
       name: 'HRS Vanilla',
       url: baseUrl,
       inLanguage: language,
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: `${baseUrl}/products?q={search_term_string}`,
+        'query-input': 'required name=search_term_string',
+      },
     });
   }, [language, pathname, t]);
 
