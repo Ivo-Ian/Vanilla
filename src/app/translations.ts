@@ -82,14 +82,14 @@ export const translations = {
     },
     products: {
       title: 'Our Products',
-      subtitle: 'Premium vanilla products for professional buyers',
+      subtitle: 'Bourbon vanilla from Madagascar with FOB pricing references',
       beansTitle: 'Vanilla Beans',
       processedTitle: 'Processed Vanilla',
       specsLabel: 'Specifications:',
 
       tkNoirTitle: 'Grade A - TK Noir',
-      tkNoirPrice: '75€ FOB',
-      tkNoirLength: 'Length: +13cm',
+      tkNoirPrice: '75€ (+13cm) / 90€ (+16cm) FOB',
+      tkNoirLength: 'Length: +13cm and +16cm',
       tkNoirMoisture: 'Moisture: ~30%',
       tkNoirVanillin: 'Vanillin: 1.5 - 2%',
       tkNoirAppearance: 'Appearance: Dark brown to black, fleshy, shiny, supple, unsplit',
@@ -97,8 +97,8 @@ export const translations = {
       tkNoirUse: 'Usage: Multiple uses, rich in vanilla caviar',
 
       gourmetTitle: 'Grade A - Gourmet',
-      gourmetPrice: '90€ FOB',
-      gourmetLength: 'Length: +16cm',
+      gourmetPrice: '70€ (+13cm) / 85€ (+16cm) FOB',
+      gourmetLength: 'Length: +13cm and +16cm',
       gourmetMoisture: 'Moisture: ~35%',
       gourmetVanillin: 'Vanillin: 1.5 - 2%',
       gourmetAppearance: 'Appearance: Dark/chocolate, soft, plump, oily, supple, unsplit',
@@ -106,7 +106,7 @@ export const translations = {
       gourmetUse: 'Usage: Multiple uses, rich in vanilla caviar',
 
       gradeBTitle: 'Grade B',
-      gradeBPrice: '70€ - 85€ FOB',
+      gradeBPrice: '55€ FOB',
       gradeBLength: 'Length: +13cm / +16cm mixed',
       gradeBMoisture: 'Moisture: 21% - 28%',
       gradeBVanillin: 'Vanillin: 1.5 - 2%',
@@ -125,11 +125,11 @@ export const translations = {
 
       powderTitle: 'Pure Vanilla Powder',
       powderPrice: '65€/kg FOB',
-      powderDesc: '100% pure ground vanilla beans. Ideal for baking and flavoring.',
+      powderDesc: '100% pure ground vanilla beans. FOB reference: 65€ per kg.',
 
       seedsTitle: 'Vanilla Seeds / Caviar',
       seedsPrice: '133€/kg FOB',
-      seedsDesc: 'Pure vanilla seeds extracted from premium beans. High flavor concentration.',
+      seedsDesc: 'Pure vanilla seeds (caviar). FOB reference: 133€ per kg.',
 
       customTitle: 'Custom Orders',
       customDesc: 'We can accommodate special requests for specific grades, sizes, or packaging. Contact us to discuss your requirements.',
@@ -280,14 +280,14 @@ export const translations = {
     },
     products: {
       title: 'Nos Produits',
-      subtitle: 'Produits de vanille premium pour acheteurs professionnels',
+      subtitle: 'Vanille Bourbon de Madagascar avec prix FOB de référence',
       beansTitle: 'Gousses de Vanille',
       processedTitle: 'Vanille Transformée',
       specsLabel: 'Spécificités :',
 
       tkNoirTitle: 'Grade A - TK Noir',
-      tkNoirPrice: '75€ FOB',
-      tkNoirLength: 'Dimension : +13cm',
+      tkNoirPrice: '75€ (+13cm) / 90€ (+16cm) FOB',
+      tkNoirLength: 'Dimensions : +13cm et +16cm',
       tkNoirMoisture: 'Humidité : ~30%',
       tkNoirVanillin: 'Vanilline : 1,5 - 2%',
       tkNoirAppearance: 'Apparence : Brun foncé à noir, charnue, luisante, souple, non fendue',
@@ -295,8 +295,8 @@ export const translations = {
       tkNoirUse: 'Utilisation : Multiple car plein de caviar de gousse',
 
       gourmetTitle: 'Grade A - Gourmet',
-      gourmetPrice: '90€ FOB',
-      gourmetLength: 'Dimension : +16cm',
+      gourmetPrice: '70€ (+13cm) / 85€ (+16cm) FOB',
+      gourmetLength: 'Dimensions : +13cm et +16cm',
       gourmetMoisture: 'Humidité : ~35%',
       gourmetVanillin: 'Vanilline : 1,5 - 2%',
       gourmetAppearance: 'Apparence : Sombre/chocolatée, douce, dodue, huileuse, souple, non fendue',
@@ -304,7 +304,7 @@ export const translations = {
       gourmetUse: 'Utilisation : Multiple car plein de caviar de gousse',
 
       gradeBTitle: 'Grade B',
-      gradeBPrice: '70€ - 85€ FOB',
+      gradeBPrice: '55€ FOB',
       gradeBLength: 'Dimension : +13cm / +16cm confondues',
       gradeBMoisture: 'Humidité : 21% - 28%',
       gradeBVanillin: 'Vanilline : 1,5 - 2%',
@@ -323,11 +323,11 @@ export const translations = {
 
       powderTitle: 'Poudre de Vanille',
       powderPrice: '65€/kg FOB',
-      powderDesc: '100% gousses de vanille pures moulues. Idéal pour la pâtisserie.',
+      powderDesc: '100% gousses de vanille pures moulues. Référence FOB : 65€/kg.',
 
       seedsTitle: 'Graines de Vanille (Caviar)',
       seedsPrice: '133€/kg FOB',
-      seedsDesc: 'Graines pures. Forte concentration de saveur.',
+      seedsDesc: 'Graines de vanille pures (caviar). Référence FOB : 133€/kg.',
 
       customTitle: 'Commandes Personnalisées',
       customDesc: 'Nous pouvons répondre aux demandes spéciales pour des grades, tailles ou emballages spécifiques. Contactez-nous pour discuter de vos besoins.',
@@ -478,14 +478,14 @@ export const translations = {
     },
     products: {
       title: 'Ny Vokatra Anay',
-      subtitle: 'Vokatra lavanila tsara ho an\'ny mpividy matihanina',
+      subtitle: 'Vanille Bourbon avy any Madagasikara miaraka amin\'ny vidiny FOB fanondroana',
       beansTitle: 'Gousses Lavanila',
       processedTitle: 'Lavanila Voahodina',
       specsLabel: 'Famaritana:',
 
       tkNoirTitle: 'Grade A - TK Noir',
-      tkNoirPrice: '75€ FOB',
-      tkNoirLength: 'Halavany: +13cm',
+      tkNoirPrice: '75€ (+13cm) / 90€ (+16cm) FOB',
+      tkNoirLength: 'Halavany: +13cm sy +16cm',
       tkNoirMoisture: 'Hamandoana: ~30%',
       tkNoirVanillin: 'Harin\'ny vanillin: 1.5 - 2%',
       tkNoirAppearance: 'Endriny: Mainty, misy menaka, mangirana',
@@ -493,8 +493,8 @@ export const translations = {
       tkNoirUse: 'Fampiasana: Azo ampiasaina amin\'ny zavatra maro',
 
       gourmetTitle: 'Grade A - Gourmet',
-      gourmetPrice: '90€ FOB',
-      gourmetLength: 'Halavany: +16cm',
+      gourmetPrice: '70€ (+13cm) / 85€ (+16cm) FOB',
+      gourmetLength: 'Halavany: +13cm sy +16cm',
       gourmetMoisture: 'Hamandoana: ~35%',
       gourmetVanillin: 'Harin\'ny vanillin: 1.5 - 2%',
       gourmetAppearance: 'Endriny: Sôkôla maizina, malefaka, matavy',
@@ -502,7 +502,7 @@ export const translations = {
       gourmetUse: 'Fampiasana: Azo ampiasaina amin\'ny zavatra maro',
 
       gradeBTitle: 'Grade B',
-      gradeBPrice: '70€ - 85€ FOB',
+      gradeBPrice: '55€ FOB',
       gradeBLength: 'Halavany: +13cm / +16cm mifangaro',
       gradeBMoisture: 'Hamandoana: 21% - 28%',
       gradeBVanillin: 'Harin\'ny vanillin: 1.5 - 2%',
@@ -521,11 +521,11 @@ export const translations = {
 
       powderTitle: 'Vovoka Lavanila Madio',
       powderPrice: '65€/kg FOB',
-      powderDesc: '100% lavanila voatoto. Tsara indrindra ho an\'ny fanaovana mofo sy ny tsiro.',
+      powderDesc: '100% lavanila voatoto madio. Vidiny FOB fanondroana: 65€/kg.',
 
       seedsTitle: 'Graines Lavanila (Caviar)',
       seedsPrice: '133€/kg FOB',
-      seedsDesc: 'Graines voajanahary. Forte fanambarana.',
+      seedsDesc: 'Voan\'ny lavanila madio (caviar). Vidiny FOB fanondroana: 133€/kg.',
 
       customTitle: 'Baiko Manokana',
       customDesc: 'Afaka mandray fangatahana manokana ho an\'ny kilasy manokana, habe, na famonosana izahay.',
