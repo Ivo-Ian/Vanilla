@@ -1,4 +1,4 @@
-import { Users, Heart, Award, Handshake } from 'lucide-react';
+import { Award, ShieldCheck, Handshake, MessageCircleHeart } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -60,79 +60,52 @@ export function About() {
         </div>
       </section>
 
-      {/* Our Values */}
+      {/* Vision */}
       <section className="py-20 bg-neutral-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif text-amber-900 mb-4">
-              {t.about.ourValuesTitle}
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-6">
+              <Award className="text-amber-900" size={32} />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif text-amber-900 mb-6">
+              {t.about.visionTitle}
             </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white rounded-lg p-8 text-center shadow-sm">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4">
-                <Award className="text-amber-900" size={32} />
-              </div>
-              <h3 className="text-xl text-neutral-900 mb-3">{t.about.qualityFirst}</h3>
-              <p className="text-neutral-600">
-                {t.about.qualityFirstDesc}
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-8 text-center shadow-sm">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4">
-                <Handshake className="text-amber-900" size={32} />
-              </div>
-              <h3 className="text-xl text-neutral-900 mb-3">{t.about.fairTrade}</h3>
-              <p className="text-neutral-600">
-                {t.about.fairTradeDesc}
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-8 text-center shadow-sm">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4">
-                <Heart className="text-amber-900" size={32} />
-              </div>
-              <h3 className="text-xl text-neutral-900 mb-3">{t.about.sustainability}</h3>
-              <p className="text-neutral-600">
-                {t.about.sustainabilityDesc}
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-8 text-center shadow-sm">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4">
-                <Users className="text-amber-900" size={32} />
-              </div>
-              <h3 className="text-xl text-neutral-900 mb-3">{t.about.transparency}</h3>
-              <p className="text-neutral-600">
-                {t.about.transparencyDesc}
-              </p>
-            </div>
+            <p className="text-lg text-neutral-700 leading-relaxed">
+              {t.about.visionDesc}
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Team & Certification */}
+      {/* Trust Commitments */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-serif text-amber-900 mb-6">
-                {t.about.ourTeamTitle}
-              </h2>
-              <p className="text-lg text-neutral-700">
-                {t.about.ourTeamDesc}
-              </p>
+          <div className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif text-amber-900">
+              {t.about.trustTitle}
+            </h2>
+          </div>
+          <p className="max-w-4xl mx-auto text-center text-lg text-neutral-700 mb-12">
+            {t.about.trustIntro}
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-neutral-50 rounded-lg p-8 text-center">
+              <ShieldCheck className="text-amber-700 mx-auto mb-3" size={28} />
+              <h3 className="text-xl font-serif text-amber-900 mb-2">{t.about.trustPoint1Title}</h3>
+              <p className="text-neutral-700">{t.about.trustPoint1Desc}</p>
             </div>
-            
-            <div>
-              <h2 className="text-3xl font-serif text-amber-900 mb-6">
-                {t.about.certifiedTitle}
-              </h2>
-              <p className="text-lg text-neutral-700">
-                {t.about.certifiedDesc}
-              </p>
+
+            <div className="bg-neutral-50 rounded-lg p-8 text-center">
+              <Handshake className="text-amber-700 mx-auto mb-3" size={28} />
+              <h3 className="text-xl font-serif text-amber-900 mb-2">{t.about.trustPoint2Title}</h3>
+              <p className="text-neutral-700">{t.about.trustPoint2Desc}</p>
+            </div>
+
+            <div className="bg-neutral-50 rounded-lg p-8 text-center">
+              <MessageCircleHeart className="text-amber-700 mx-auto mb-3" size={28} />
+              <h3 className="text-xl font-serif text-amber-900 mb-2">{t.about.trustPoint3Title}</h3>
+              <p className="text-neutral-700">{t.about.trustPoint3Desc}</p>
             </div>
           </div>
         </div>

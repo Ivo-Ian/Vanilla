@@ -74,7 +74,7 @@ export function SeoMeta() {
     };
 
     const fallback = {
-      title: 'Madagascar Vanilla Co. | Vanilla Exportation & Quality',
+      title: 'HRS Vanilla | Vanilla Exportation & Quality',
       description: 'Premium vanilla from Madagascar for exportation with consistent quality standards.',
     };
 
@@ -92,7 +92,7 @@ export function SeoMeta() {
     setMeta('property', 'og:description', description);
     setMeta('property', 'og:url', canonical);
     setMeta('property', 'og:image', ogImage);
-    setMeta('property', 'og:site_name', 'Madagascar Vanilla Co.');
+    setMeta('property', 'og:site_name', 'HRS Vanilla');
     setMeta('property', 'og:locale', language === 'fr' ? 'fr_FR' : language === 'mg' ? 'mg_MG' : 'en_US');
 
     setMeta('name', 'twitter:card', 'summary_large_image');
@@ -109,7 +109,7 @@ export function SeoMeta() {
     setJsonLd('org-jsonld', {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: 'Madagascar Vanilla Co.',
+      name: 'HRS Vanilla',
       url: baseUrl,
       email: 'hrstrans@yahoo.fr',
       telephone: '+261332060213',
@@ -125,7 +125,7 @@ export function SeoMeta() {
     setJsonLd('website-jsonld', {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: 'Madagascar Vanilla Co.',
+      name: 'HRS Vanilla',
       url: baseUrl,
       inLanguage: language,
     });

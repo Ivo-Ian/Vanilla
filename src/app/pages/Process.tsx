@@ -1,17 +1,14 @@
-import { Flower, Sun, Droplets, Wind, Package, CheckCircle, Images } from 'lucide-react';
+import { Flower, Sun, Droplets, Wind, Package, CheckCircle } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useTranslation } from '../hooks/useTranslation';
 import { ProcessStep } from './process/components/ProcessStep';
 
-// Import local photos
 import photo1 from '../../photos/1.jpg';
 import photo2 from '../../photos/2.jpg';
 import photo3 from '../../photos/3.jpg';
 import photo4 from '../../photos/4.jpg';
 import photo5 from '../../photos/5.jpg';
 import photo6 from '../../photos/6.jpg';
-import photo7 from '../../photos/7.jpg';
-import photo8 from '../../photos/8.png';
 import packaging from '../../photos/packaging.jpg';
 import certificat from '../../photos/certificat.png';
 
@@ -82,10 +79,8 @@ export function Process() {
       description: t.process.qualityDesc,
       icon: Sun,
       images: [ 
+        
         {
-          url : photo3,
-          alt: 'Vanilla beans drying in the sun',
-        },{
           url: certificat,
           alt: 'Vanilla quality certificate',
         }
@@ -141,10 +136,8 @@ export function Process() {
                 icon={step.icon}
                 title={step.title}
                 description={step.description}
-                image={step.image}
                 imageAlt={step.imageAlt}
                 images={step.images}
-                isPlaceholder={step.isPlaceholder}
                 reversed={step.reversed}
               />
             ))}

@@ -8,22 +8,10 @@ import { SectionWithIcon } from './why-choose-us/components/SectionWithIcon';
 export function WhyChooseUs() {
   const t = useTranslation();
 
-  const qualityChecks = [
-    t.whyChooseUs.qualityVisual, t.whyChooseUs.qualityMoisture,
-    t.whyChooseUs.qualityVanillin, t.whyChooseUs.qualityAroma,
-    t.whyChooseUs.qualityDefects,
-  ];
-
-  const complianceItems = [
-    t.whyChooseUs.complianceLicensed, t.whyChooseUs.complianceQuality,
-    t.whyChooseUs.complianceOrganic, t.whyChooseUs.complianceDocumentation,
-    t.whyChooseUs.complianceCompliant,
-  ];
-
   const testimonials = [
-    { quote: t.whyChooseUs.testimonial1, author: t.whyChooseUs.testimonial1Author },
-    { quote: t.whyChooseUs.testimonial2, author: t.whyChooseUs.testimonial2Author },
-    { quote: t.whyChooseUs.testimonial3, author: t.whyChooseUs.testimonial3Author },
+    { quote: t.whyChooseUs.testimonial1Text, author: t.whyChooseUs.testimonial1Author },
+    { quote: t.whyChooseUs.testimonial2Text, author: t.whyChooseUs.testimonial2Author },
+    { quote: t.whyChooseUs.testimonial3Text, author: t.whyChooseUs.testimonial3Author },
   ];
 
   return (
@@ -44,43 +32,34 @@ export function WhyChooseUs() {
         </div>
       </section>
 
-      {/* Direct from Madagascar */}
+      {/* Reason 1 */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <SectionWithIcon icon={MapPin} title={t.whyChooseUs.directTitle}>
-              <p className="text-lg text-neutral-700 leading-relaxed">{t.whyChooseUs.directDesc}</p>
+            <SectionWithIcon icon={Award} title={t.whyChooseUs.reason1Title}>
+              <p className="text-lg text-neutral-700 leading-relaxed">{t.whyChooseUs.reason1Desc}</p>
             </SectionWithIcon>
           </div>
         </div>
       </section>
 
-      {/* Quality Control */}
+      {/* Reason 2 */}
       <section className="py-20 bg-neutral-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <SectionWithIcon icon={Award} title={t.whyChooseUs.qualityTitle}>
-              <p className="text-lg text-neutral-700 leading-relaxed mb-4">{t.whyChooseUs.qualityP1}</p>
-              <ul className="space-y-2 ml-4">
-                {qualityChecks.map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-neutral-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-lg text-neutral-700 leading-relaxed mt-4">{t.whyChooseUs.qualityP2}</p>
+            <SectionWithIcon icon={MapPin} title={t.whyChooseUs.reason2Title}>
+              <p className="text-lg text-neutral-700 leading-relaxed">{t.whyChooseUs.reason2Desc}</p>
             </SectionWithIcon>
           </div>
         </div>
       </section>
 
-      {/* Ethical Sourcing */}
+      {/* Reason 3 */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <SectionWithIcon icon={Award} title={t.whyChooseUs.ethicalTitle}>
-              <p className="text-lg text-neutral-700 leading-relaxed">{t.whyChooseUs.ethicalDesc}</p>
+            <SectionWithIcon icon={Shield} title={t.whyChooseUs.reason3Title}>
+              <p className="text-lg text-neutral-700 leading-relaxed">{t.whyChooseUs.reason3Desc}</p>
             </SectionWithIcon>
             <div className="relative h-[350px] rounded-lg overflow-hidden shadow-lg">
               <ImageWithFallback
@@ -93,40 +72,12 @@ export function WhyChooseUs() {
         </div>
       </section>
 
-      {/* Reliable Supply */}
+      {/* Reason 4 */}
       <section className="py-20 bg-neutral-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-serif text-amber-900 mb-6 text-center">{t.whyChooseUs.reliableTitle}</h2>
-            <p className="text-lg text-neutral-700 leading-relaxed mb-4">{t.whyChooseUs.reliableP1}</p>
-            <p className="text-lg text-neutral-700 leading-relaxed">{t.whyChooseUs.reliableP2}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Expertise */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-serif text-amber-900 mb-6 text-center">{t.whyChooseUs.expertiseTitle}</h2>
-            <p className="text-lg text-neutral-700 leading-relaxed">{t.whyChooseUs.expertiseDesc}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="py-20 bg-neutral-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <SectionWithIcon icon={Shield} title={t.whyChooseUs.complianceTitle}>
-              <ul className="space-y-2 ml-4">
-                {complianceItems.map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-lg text-neutral-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <SectionWithIcon icon={CheckCircle} title={t.whyChooseUs.reason4Title}>
+              <p className="text-lg text-neutral-700 leading-relaxed">{t.whyChooseUs.reason4Desc}</p>
             </SectionWithIcon>
           </div>
         </div>

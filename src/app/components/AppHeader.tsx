@@ -17,7 +17,7 @@ export function AppHeader() {
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center">
             <div className="text-2xl font-serif text-amber-900">
-              Madagascar Vanilla Co.
+              HRS Vanilla
             </div>
           </Link>
 

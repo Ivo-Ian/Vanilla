@@ -13,7 +13,7 @@ export function AppFooter() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-serif text-amber-100 mb-4">
-              Madagascar Vanilla Co.
+              HRS Vanilla
             </h3>
             <p className="text-sm">{t.footer.companyInfo}</p>
           </div>
