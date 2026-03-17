@@ -2,16 +2,15 @@ import { MapPin, Award, Shield, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useTranslation } from '../hooks/useTranslation';
-import { TestimonialCard } from './why-choose-us/components/TestimonialCard';
 import { SectionWithIcon } from './why-choose-us/components/SectionWithIcon';
 
 export function WhyChooseUs() {
   const t = useTranslation();
 
-  const testimonials = [
-    { quote: t.whyChooseUs.testimonial1Text, author: t.whyChooseUs.testimonial1Author },
-    { quote: t.whyChooseUs.testimonial2Text, author: t.whyChooseUs.testimonial2Author },
-    { quote: t.whyChooseUs.testimonial3Text, author: t.whyChooseUs.testimonial3Author },
+  const trustItems = [
+    t.contact.beforeOrderMinimum,
+    t.contact.beforeOrderSamples,
+    t.contact.beforeOrderPayment,
   ];
 
   return (
@@ -83,14 +82,22 @@ export function WhyChooseUs() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Trust Commitments */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-serif text-amber-900 mb-12 text-center">{t.whyChooseUs.testimonialsTitle}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((item, i) => (
-              <TestimonialCard key={i} quote={item.quote} author={item.author} />
-            ))}
+          <h2 className="text-3xl font-serif text-amber-900 mb-12 text-center">{t.about.trustTitle}</h2>
+          <p className="max-w-4xl mx-auto text-center text-lg text-neutral-700 mb-10">
+            {t.about.trustIntro}
+          </p>
+          <div className="max-w-4xl mx-auto bg-neutral-50 rounded-xl p-8 md:p-10">
+            <ul className="space-y-4">
+              {trustItems.map((item, i) => (
+                <li key={i} className="flex items-start">
+                  <CheckCircle className="text-amber-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span className="text-neutral-700">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

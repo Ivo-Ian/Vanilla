@@ -11,6 +11,8 @@ import photo5 from '../../photos/5.jpg';
 import photo6 from '../../photos/6.jpg';
 import packaging from '../../photos/packaging.jpg';
 import certificat from '../../photos/certificat.png';
+import sortingV2 from '../../photos/vanilla-sorting.jpeg';
+import rulingBeans from '../../photos/vanilla-tk-pic.jpeg';
 
 
 export function Process() {
@@ -66,6 +68,16 @@ export function Process() {
       description: t.process.sortingDesc,
       icon: CheckCircle,
       images:  [
+        {
+          url: sortingV2,
+          alt: 'Sorting and grading vanilla beans according to quality standards',
+        }
+        ,
+         {
+          url: rulingBeans,
+          alt: 'Sorting and grading vanilla beans according to quality standards',
+        }
+        ,
         {
           url: photo3,
           alt: 'Vanilla beans drying in the sun',

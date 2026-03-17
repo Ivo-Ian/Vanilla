@@ -11,6 +11,11 @@ import photo4 from '../../photos/4.jpg';
 import photo5 from '../../photos/5.jpg';
 import photo6 from '../../photos/6.jpg';
 import photoPackaging from '../../photos/packaging.jpg';
+import tkPic from '../../photos/vanilla-tk-black.jpeg';
+import gourmetPic from '../../photos/vanilla-gourmet.jpeg';
+import bGrade from '../../photos/b-grade-vanilla.jpeg';
+import beans from '../../photos/vanilla-beans.jpeg';
+import vanillaPowder from '../../photos/vanilla-prowder.jpeg';
 
 export function Products() {
   const t = useTranslation();
@@ -20,7 +25,7 @@ export function Products() {
       title: t.products.tkNoirTitle,
       price: t.products.tkNoirPrice,
       specsLabel: t.products.specsLabel,
-      image: photo1,
+      image: tkPic,
       specs: [
         t.products.tkNoirLength,
         t.products.tkNoirMoisture,
@@ -34,7 +39,7 @@ export function Products() {
       title: t.products.gourmetTitle,
       price: t.products.gourmetPrice,
       specsLabel: t.products.specsLabel,
-      image: photo2,
+      image: gourmetPic,
       specs: [
         t.products.gourmetLength,
         t.products.gourmetMoisture,
@@ -48,7 +53,7 @@ export function Products() {
       title: t.products.gradeBTitle,
       price: t.products.gradeBPrice,
       specsLabel: t.products.specsLabel,
-      image: photo3,
+      image: bGrade,
       specs: [
         t.products.gradeBLength,
         t.products.gradeBMoisture,
@@ -62,7 +67,7 @@ export function Products() {
       title: t.products.gradeCTitle,
       price: t.products.gradeCPrice,
       specsLabel: t.products.specsLabel,
-      image: photo4,
+      image: bGrade,
       specs: [
         t.products.gradeCLength,
         t.products.gradeCMoisture,
@@ -79,14 +84,14 @@ export function Products() {
       title: t.products.powderTitle,
       price: t.products.powderPrice,
       specsLabel: t.products.specsLabel,
-      image: photo5,
+      image: vanillaPowder,
       specs: [t.products.powderDesc],
     },
     {
       title: t.products.seedsTitle,
       price: t.products.seedsPrice,
       specsLabel: t.products.specsLabel,
-      image: photo6,
+      image: beans,
       specs: [t.products.seedsDesc],
     }
   ];
