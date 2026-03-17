@@ -111,7 +111,7 @@ export function SeoMeta() {
       '@type': 'Organization',
       name: 'HRS Vanilla',
       url: baseUrl,
-      email: 'hrstrans@yahoo.fr',
+      email: 'soloniaina@hrsmg.com',
       telephone: '+261332060213',
       address: {
         '@type': 'PostalAddress',

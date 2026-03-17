@@ -44,7 +44,7 @@ export function useContactForm() {
       `Message:\n${formData.message}`
     );
 
-    const mailtoUrl = `mailto:hrstrans@yahoo.fr?subject=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:soloniaina@hrsmg.com?subject=${subject}&body=${body}`;
     const iframe = document.createElement('iframe');
     iframe.style.display = 'none';
     iframe.src = mailtoUrl;

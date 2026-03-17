@@ -6,7 +6,7 @@ import { useNavLinks } from '../hooks/useNavLinks';
 export function AppFooter() {
   const t = useTranslation();
   const navLinks = useNavLinks();
-  const email = 'hrstrans@yahoo.fr';
+  const email = 'soloniaina@hrsmg.com';
   const whatsapp = '+261 33 20 602 13';
 
   return (
