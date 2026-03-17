@@ -8,15 +8,29 @@ export function Products() {
 
   const products = [
     {
-      title: t.products.gradeATitle,
-      specsLabel: t.products.gradeASpecs,
+      title: t.products.tkNoirTitle,
+      specsLabel: t.products.tkNoirSpecs,
       specs: [
-        t.products.gradeALength,
-        t.products.gradeAMoisture,
-        t.products.gradeAAppearance,
-        t.products.gradeAAroma,
-        t.products.gradeAUse,
-        t.products.gradeAPackaging,
+        t.products.tkNoirLength,
+        t.products.tkNoirMoisture,
+        t.products.tkNoirVanillin,
+        t.products.tkNoirAppearance,
+        t.products.tkNoirAroma,
+        t.products.tkNoirUse,
+        t.products.tkNoirPrice,
+      ],
+    },
+    {
+      title: t.products.gourmetTitle,
+      specsLabel: t.products.gourmetSpecs,
+      specs: [
+        t.products.gourmetLength,
+        t.products.gourmetMoisture,
+        t.products.gourmetVanillin,
+        t.products.gourmetAppearance,
+        t.products.gourmetAroma,
+        t.products.gourmetUse,
+        t.products.gourmetPrice,
       ],
     },
     {
@@ -25,10 +39,24 @@ export function Products() {
       specs: [
         t.products.gradeBLength,
         t.products.gradeBMoisture,
+        t.products.gradeBVanillin,
         t.products.gradeBAppearance,
         t.products.gradeBAroma,
         t.products.gradeBUse,
-        t.products.gradeBPackaging,
+        t.products.gradeBPrice,
+      ],
+    },
+    {
+      title: t.products.gradeCTitle,
+      specsLabel: t.products.gradeCSpecs,
+      specs: [
+        t.products.gradeCLength,
+        t.products.gradeCMoisture,
+        t.products.gradeCVanillin,
+        t.products.gradeCAppearance,
+        t.products.gradeCAroma,
+        t.products.gradeCUse,
+        t.products.gradeCPrice,
       ],
     },
     {
@@ -37,20 +65,18 @@ export function Products() {
       specs: [
         t.products.powderForm,
         t.products.powderIngredients,
-        t.products.powderColor,
         t.products.powderUse,
-        t.products.powderPackaging,
+        t.products.powderPrice,
       ],
     },
     {
-      title: t.products.pastesTitle,
-      specsLabel: t.products.pastesSpecs,
+      title: t.products.seedsTitle,
+      specsLabel: t.products.seedsSpecs,
       specs: [
-        t.products.pastesIngredients,
-        t.products.pastesVanillin,
-        t.products.pastesAppearance,
-        t.products.pastesUse,
-        t.products.pastesPackaging,
+        t.products.seedsForm,
+        t.products.seedsIngredients,
+        t.products.powderUse,
+        t.products.seedsPrice,
       ],
     },
   ];

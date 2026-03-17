@@ -7,10 +7,12 @@ export function ContactForm() {
   const { formData, isSubmitted, handleChange, handleSubmit } = useContactForm();
 
   const productOptions = [
-    { value: 'grade-a', label: t.contact.formProductGradeA },
+    { value: 'grade-a-tk-noir', label: t.contact.formProductGradeATK },
+    { value: 'grade-a-gourmet', label: t.contact.formProductGradeAGourmet },
     { value: 'grade-b', label: t.contact.formProductGradeB },
+    { value: 'grade-c', label: t.contact.formProductGradeC },
     { value: 'powder', label: t.contact.formProductPowder },
-    { value: 'paste', label: t.contact.formProductPaste },
+    { value: 'seeds', label: t.contact.formProductSeeds },
     { value: 'other', label: t.contact.formProductOther },
   ];
 
