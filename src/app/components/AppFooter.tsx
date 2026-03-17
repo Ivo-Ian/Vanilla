@@ -6,6 +6,8 @@ import { useNavLinks } from '../hooks/useNavLinks';
 export function AppFooter() {
   const t = useTranslation();
   const navLinks = useNavLinks();
+  const email = 'hrstrans@yahoo.fr';
+  const whatsapp = '+261 33 20 602 13';
 
   return (
     <footer className="bg-neutral-900 text-neutral-300 mt-20">
@@ -15,7 +17,7 @@ export function AppFooter() {
             <h3 className="text-xl font-serif text-amber-100 mb-4">
               HRS Vanilla
             </h3>
-            <p className="text-sm">{t.footer.companyInfo}</p>
+            <p className="text-sm">{t.footer.tagline}</p>
           </div>
 
           <div>
@@ -35,15 +37,15 @@ export function AppFooter() {
           </div>
 
           <div>
-            <h4 className="text-lg text-amber-100 mb-4">{t.footer.contactTitle}</h4>
+            <h4 className="text-lg text-amber-100 mb-4">{t.footer.contactInfo}</h4>
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-sm">
                 <Mail size={16} />
-                <span>{t.footer.email}</span>
+                <span>{email}</span>
               </li>
               <li className="flex items-center space-x-2 text-sm">
                 <Phone size={16} />
-                <span>{t.footer.whatsapp}</span>
+                <span>WhatsApp: {whatsapp}</span>
               </li>
             </ul>
           </div>
