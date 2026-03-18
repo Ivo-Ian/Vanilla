@@ -7,7 +7,7 @@ export function AppFooter() {
   const t = useTranslation();
   const navLinks = useNavLinks();
   const email = 'soloniaina@hrsmg.com';
-  const whatsapp = '+261 33 20 602 13';
+  const whatsapp = '+261 38 33 340 57';
 
   return (
     <footer className="bg-neutral-900 text-neutral-300 mt-20">
