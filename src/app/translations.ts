@@ -35,7 +35,7 @@ export const translations = {
       featTkNoir: 'Grade A - TK Noir',
       featTkNoirDesc: 'Intense sweet aroma. Moisture 30% - 32%, 14cm',
       featGourmet: 'Grade A - Gourmet',
-      featGourmetDesc: 'Powerful fragrance, oily and soft. Moisture autour de 35%, +16cm',
+      featGourmetDesc: 'Powerful fragrance, oily and soft. Moisture arround 35%, 16cm',
       featPowder: 'Pure Vanilla Powder',
       featPowderDesc: '100% pure ground vanilla beans.',
       requestQuote: 'Request Quote',
@@ -110,8 +110,8 @@ export const translations = {
       specsLabel: 'Specifications:',
 
       tkNoirTitle: 'Grade A - TK Noir',
-      tkNoirPrice: '75€ (+14cm) / 90€ (+16cm) FOB',
-      tkNoirLength: 'Length: +14cm to +16cm',
+      tkNoirPrice: '75€ (+14cm) / 90€ (16cm) FOB',
+      tkNoirLength: 'Length: +14cm to 16cm',
       tkNoirMoisture: 'Moisture: 30% - 32%',
       tkNoirVanillin: 'Vanillin: 1.5 - 2%',
       tkNoirAppearance: 'Appearance: Dark brown to black, fleshy, shiny, supple, unsplit',
@@ -129,7 +129,7 @@ export const translations = {
 
       gradeBTitle: 'Grade B',
       gradeBPrice: '55€ FOB',
-      gradeBLength: 'Length: +14cm / +16cm mixed',
+      gradeBLength: 'Length: +14cm / 16cm mixed',
       gradeBMoisture: 'Moisture: below 25%; visibly drier and more brittle',
       gradeBVanillin: 'Vanillin: around 1.6%',
       gradeBAppearance: 'Appearance: Natural red-brown tint, drier, less fleshy, split and unsplit',
@@ -138,7 +138,7 @@ export const translations = {
 
       gradeCTitle: 'Grade C',
       gradeCPrice: '55€ FOB',
-      gradeCLength: 'Length: +14cm / +16cm mixed',
+      gradeCLength: 'Length: +14cm / 16cm mixed',
       gradeCMoisture: 'Moisture: 15% - 20%',
       gradeCVanillin: 'Vanillin: 1.5 - 2%',
       gradeCAppearance: 'Appearance: Red vanilla, advanced maturation, drier, split and unsplit',
