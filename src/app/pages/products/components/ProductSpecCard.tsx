@@ -4,13 +4,12 @@ import { ImageWithFallback } from '../../../components/figma/ImageWithFallback';
 
 interface ProductSpecCardProps {
   title: string;
-  price?: string;
   specsLabel: string;
   specs: string[];
   image?: string;
 }
 
-export function ProductSpecCard({ title, price, specsLabel, specs, image }: ProductSpecCardProps) {
+export function ProductSpecCard({ title, specsLabel, specs, image }: ProductSpecCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -27,12 +26,6 @@ export function ProductSpecCard({ title, price, specsLabel, specs, image }: Prod
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-        {price && (
-          <div className="absolute top-4 right-4 bg-amber-900/95 backdrop-blur-md text-white px-4 py-2 rounded-full font-medium shadow-lg text-sm border border-white/20">
-            {price}
-          </div>
-        )}
       </div>
 
       {/* Content Section */}

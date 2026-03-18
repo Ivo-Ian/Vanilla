@@ -23,7 +23,6 @@ export function Products() {
   const beanProducts = [
     {
       title: t.products.tkNoirTitle,
-      price: t.products.tkNoirPrice,
       specsLabel: t.products.specsLabel,
       image: tkPic,
       specs: [
@@ -37,7 +36,6 @@ export function Products() {
     },
     {
       title: t.products.gourmetTitle,
-      price: t.products.gourmetPrice,
       specsLabel: t.products.specsLabel,
       image: gourmetPic,
       specs: [
@@ -51,7 +49,6 @@ export function Products() {
     },
     {
       title: t.products.gradeBTitle,
-      price: t.products.gradeBPrice,
       specsLabel: t.products.specsLabel,
       image: bGrade,
       specs: [
@@ -65,7 +62,6 @@ export function Products() {
     },
     {
       title: t.products.gradeCTitle,
-      price: t.products.gradeCPrice,
       specsLabel: t.products.specsLabel,
       image: bGrade,
       specs: [
@@ -82,14 +78,12 @@ export function Products() {
   const processedProducts = [
     {
       title: t.products.powderTitle,
-      price: t.products.powderPrice,
       specsLabel: t.products.specsLabel,
       image: vanillaPowder,
       specs: [t.products.powderDesc],
     },
     {
       title: t.products.seedsTitle,
-      price: t.products.seedsPrice,
       specsLabel: t.products.specsLabel,
       image: beans,
       specs: [t.products.seedsDesc],
