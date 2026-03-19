@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
 import { useTranslation } from '../hooks/useTranslation';
+import { addLocalePrefix, stripLocalePrefix } from '../utils/i18nRouting';
 
 function setMeta(attribute: 'name' | 'property', key: string, content: string) {
   let el = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`);
@@ -44,8 +45,11 @@ export function SeoMeta() {
   useEffect(() => {
     const domain = 'vanilla.hrsmg.com';
     const baseUrl = `https://${domain}`;
-    const canonical = `${baseUrl}${pathname}`;
+    const normalizedPath = stripLocalePrefix(pathname);
+    const canonicalPath = addLocalePrefix(normalizedPath, language);
+    const canonical = `${baseUrl}${canonicalPath}`;
     const ogImage = 'https://images.unsplash.com/photo-1512372388054-a322888e67a6?auto=format&fit=crop&w=1200&q=80';
+    const isGradeABeanPage = normalizedPath === '/grade-a-bourbon-beans';
 
     const pages: Record<string, { title: string; description: string }> = {
       '/': {
@@ -64,6 +68,10 @@ export function SeoMeta() {
         title: `${t.products.title} | GRADE A/B/C VANILLA BEANS EXPORT`,
         description: `${t.products.subtitle}. Buy premium Madagascar beans, powder, and seeds for global exportation. Best prices for quality vanilla.`,
       },
+      '/grade-a-bourbon-beans': {
+        title: 'Grade A Bourbon Vanilla Beans | SAVA Madagascar Export',
+        description: 'Premium Grade A Bourbon vanilla beans from Sambava and Antalaha (SAVA), Madagascar. Organic/Fairtrade aligned sourcing for global buyers.',
+      },
       '/why-choose-us': {
         title: `${t.whyChooseUs.title} | RELIABLE VANILLA QUALITY SUPPLIER`,
         description: `${t.whyChooseUs.subtitle}. Why we are the preferred partner for Madagascar vanilla exportation and high quality worldwide.`,
@@ -79,7 +87,10 @@ export function SeoMeta() {
       description: 'Expert Madagascar vanilla exportation service providing high-quality pods, powder, and seeds globally.',
     };
 
-    const { title, description } = pages[pathname] ?? fallback;
+    const { title, description } = pages[normalizedPath] ?? fallback;
+    const enAlt = `${baseUrl}${addLocalePrefix(normalizedPath, 'en')}`;
+    const frAlt = `${baseUrl}${addLocalePrefix(normalizedPath, 'fr')}`;
+    const mgAlt = `${baseUrl}${addLocalePrefix(normalizedPath, 'mg')}`;
 
     document.documentElement.lang = language;
     document.title = title;
@@ -102,32 +113,63 @@ export function SeoMeta() {
     setMeta('name', 'twitter:image', ogImage);
 
     setLink('canonical', canonical);
-    setLink('alternate', `${baseUrl}${pathname}`, 'en');
-    setLink('alternate', `${baseUrl}${pathname}`, 'fr');
-    setLink('alternate', `${baseUrl}${pathname}`, 'mg');
-    setLink('alternate', `${baseUrl}${pathname}`, 'x-default');
+    setLink('alternate', enAlt, 'en');
+    setLink('alternate', frAlt, 'fr');
+    setLink('alternate', mgAlt, 'mg');
+    setLink('alternate', enAlt, 'x-default');
 
     setJsonLd('org-jsonld', {
       '@context': 'https://schema.org',
-      '@type': 'ProfessionalService',
-      name: 'HRS Vanilla Madagascar',
-      url: baseUrl,
-      email: 'soloniaina@hrsmg.com',
-      telephone: '+261332060213',
-      logo: `${baseUrl}/logo.png`,
-      image: ogImage,
-      description: fallback.description,
-      address: {
-        '@type': 'PostalAddress',
-        addressRegion: 'SAVA',
-        addressCountry: 'MG',
-      },
-      areaServed: 'Worldwide',
-      serviceType: 'Vanilla Exportation and Quality Control',
-      currenciesAccepted: 'USD, EUR',
-      openingHours: 'Mo,Tu,We,Th,Fr 08:00-17:00',
-      priceRange: '$$$',
-      keywords: ['vanilla', 'madagascar', 'exportation', 'quality'],
+      '@graph': [
+        {
+          '@type': 'LocalBusiness',
+          '@id': `${baseUrl}/#business`,
+          name: 'HRS Vanilla Madagascar',
+          url: baseUrl,
+          email: 'soloniaina@hrsmg.com',
+          telephone: '+261332060213',
+          logo: `${baseUrl}/logo.png`,
+          image: ogImage,
+          description: fallback.description,
+          address: {
+            '@type': 'PostalAddress',
+            addressRegion: 'SAVA',
+            addressLocality: 'Sambava',
+            addressCountry: 'MG',
+          },
+          areaServed: [
+            { '@type': 'City', name: 'Sambava' },
+            { '@type': 'City', name: 'Antalaha' },
+            { '@type': 'Country', name: 'United States' },
+            { '@type': 'Country', name: 'France' },
+            { '@type': 'Country', name: 'Madagascar' },
+          ],
+          hasCredential: [
+            { '@type': 'EducationalOccupationalCredential', name: 'Organic Certification' },
+            { '@type': 'EducationalOccupationalCredential', name: 'Fairtrade Certification' },
+          ],
+          knowsAbout: ['Bourbon Vanilla', 'HS Code 0905.10', 'Vanilla Export Logistics'],
+          currenciesAccepted: 'USD, EUR',
+          openingHours: 'Mo,Tu,We,Th,Fr 08:00-17:00',
+        },
+        ...(isGradeABeanPage
+          ? [{
+              '@type': 'Product',
+              '@id': `${canonical}#product`,
+              name: 'Grade A Bourbon Vanilla Beans',
+              brand: { '@type': 'Brand', name: 'HRS Vanilla' },
+              category: 'Vanilla Beans',
+              countryOfOrigin: { '@type': 'Country', name: 'Madagascar' },
+              additionalProperty: [
+                { '@type': 'PropertyValue', name: 'HS Code', value: '0905.10' },
+                { '@type': 'PropertyValue', name: 'Region', value: 'SAVA (Sambava, Antalaha)' },
+                { '@type': 'PropertyValue', name: 'Moisture Content', value: '33%' },
+                { '@type': 'PropertyValue', name: 'Vanillin', value: '~2%' },
+                { '@type': 'PropertyValue', name: 'Certifications', value: 'Organic, Fairtrade' },
+              ],
+            }]
+          : []),
+      ],
     });
 
     setJsonLd('website-jsonld', {
@@ -138,7 +180,7 @@ export function SeoMeta() {
       inLanguage: language,
       potentialAction: {
         '@type': 'SearchAction',
-        target: `${baseUrl}/products?q={search_term_string}`,
+        target: `${baseUrl}${addLocalePrefix('/products', language)}?q={search_term_string}`,
         'query-input': 'required name=search_term_string',
       },
     });

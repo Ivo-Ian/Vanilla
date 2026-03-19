@@ -10,7 +10,17 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
     setDidError(true)
   }
 
-  const { src, alt, style, className, ...rest } = props
+  const {
+    src,
+    alt,
+    style,
+    className,
+    loading = 'lazy',
+    decoding = 'async',
+    ...rest
+  } = props as React.ImgHTMLAttributes<HTMLImageElement> & { avifSrc?: string }
+
+  const avifSrc = (props as { avifSrc?: string }).avifSrc
 
   return didError ? (
     <div
@@ -18,10 +28,22 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
       style={style}
     >
       <div className="flex items-center justify-center w-full h-full">
-        <img src={ERROR_IMG_SRC} alt="Error loading image" {...rest} data-original-url={src} />
+        <img src={ERROR_IMG_SRC} alt="Error loading image" {...rest} loading={loading} decoding={decoding} data-original-url={src} />
       </div>
     </div>
   ) : (
-    <img src={src} alt={alt} className={className} style={style} {...rest} onError={handleError} />
+    <picture>
+      {avifSrc ? <source srcSet={avifSrc} type="image/avif" /> : null}
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        style={style}
+        {...rest}
+        loading={loading}
+        decoding={decoding}
+        onError={handleError}
+      />
+    </picture>
   )
 }

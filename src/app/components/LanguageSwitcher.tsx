@@ -1,11 +1,15 @@
 import { useLanguage } from '../context/LanguageContext';
 import { Globe } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router';
+import { addLocalePrefix } from '../utils/i18nRouting';
 
 export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -28,7 +32,9 @@ export function LanguageSwitcher() {
   }, [isOpen]);
 
   const handleLanguageSelect = (code: string) => {
-    setLanguage(code as 'en' | 'fr' | 'mg');
+    const nextLanguage = code as 'en' | 'fr' | 'mg';
+    setLanguage(nextLanguage);
+    navigate(addLocalePrefix(location.pathname, nextLanguage));
     setIsOpen(false);
   };
 

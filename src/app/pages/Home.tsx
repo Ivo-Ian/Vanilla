@@ -2,11 +2,13 @@ import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { FeatureCard } from './home/components/FeatureCard';
 import { FeaturedProductCard } from './home/components/FeaturedProductCard';
 
 export function Home() {
   const t = useTranslation();
+  const localizedPath = useLocalizedPath();
 
   const features = [
     { title: t.home.directSourcing, description: t.home.directSourcingDesc },
@@ -37,11 +39,11 @@ export function Home() {
           <h1 className="text-4xl md:text-6xl font-serif text-white mb-6">{t.home.heroTitle}</h1>
           <p className="text-xl md:text-2xl text-neutral-200 mb-8 max-w-3xl mx-auto">{t.home.heroSubtitle}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded transition-colors">
+            <Link to={localizedPath('/contact')} className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded transition-colors">
               {t.home.getQuote}
               <ArrowRight className="ml-2" size={20} />
             </Link>
-            <Link to="/products" className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-100 text-neutral-900 rounded transition-colors">
+            <Link to={localizedPath('/products')} className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-100 text-neutral-900 rounded transition-colors">
               {t.home.learnMore}
             </Link>
           </div>
@@ -86,7 +88,7 @@ export function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-serif mb-6">{t.home.readyTitle}</h2>
           <p className="text-xl text-amber-100 mb-8 max-w-2xl mx-auto">{t.home.readySubtitle}</p>
-          <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-100 text-amber-900 rounded transition-colors">
+          <Link to={localizedPath('/contact')} className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-100 text-amber-900 rounded transition-colors">
             {t.home.contactUs}
             <ArrowRight className="ml-2" size={20} />
           </Link>

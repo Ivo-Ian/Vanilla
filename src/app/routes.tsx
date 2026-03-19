@@ -7,6 +7,11 @@ import { Products } from './pages/Products';
 import { WhyChooseUs } from './pages/WhyChooseUs';
 import { Contact } from './pages/Contact';
 
+type RouteDefinition = {
+  path: string;
+  Component: () => JSX.Element;
+};
+
 function NotFound() {
   return (
     <div className="min-h-[60vh] flex items-center justify-center">
@@ -46,31 +51,24 @@ function NotFoundPage() {
   return <Layout><NotFound /></Layout>;
 }
 
+const baseRoutes: RouteDefinition[] = [
+  { path: '/', Component: RootLayout },
+  { path: '/about', Component: AboutPage },
+  { path: '/process', Component: ProcessPage },
+  { path: '/products', Component: ProductsPage },
+  { path: '/grade-a-bourbon-beans', Component: ProductsPage },
+  { path: '/why-choose-us', Component: WhyChooseUsPage },
+  { path: '/contact', Component: ContactPage },
+];
+
+const localizedBaseRoutes: RouteDefinition[] = baseRoutes.map((route) => ({
+  path: `/:lang${route.path === '/' ? '' : route.path}`,
+  Component: route.Component,
+}));
+
 export const router = createBrowserRouter([
-  {
-    path: '/',
-    Component: RootLayout,
-  },
-  {
-    path: '/about',
-    Component: AboutPage,
-  },
-  {
-    path: '/process',
-    Component: ProcessPage,
-  },
-  {
-    path: '/products',
-    Component: ProductsPage,
-  },
-  {
-    path: '/why-choose-us',
-    Component: WhyChooseUsPage,
-  },
-  {
-    path: '/contact',
-    Component: ContactPage,
-  },
+  ...baseRoutes,
+  ...localizedBaseRoutes,
   {
     path: '*',
     Component: NotFoundPage,

@@ -16,9 +16,12 @@ import gourmetPic from '../../photos/vanilla-gourmet.jpeg';
 import bGrade from '../../photos/b-grade-vanilla.jpeg';
 import beans from '../../photos/vanilla-beans.jpeg';
 import vanillaPowder from '../../photos/vanilla-prowder.jpeg';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
+import { BatchTraceability } from '../components/BatchTraceability';
 
 export function Products() {
   const t = useTranslation();
+  const localizedPath = useLocalizedPath();
 
   const beanProducts = [
     {
@@ -148,6 +151,17 @@ export function Products() {
               <ProductSpecCard key={product.title} {...product} />
             ))}
           </div>
+
+          <BatchTraceability
+            batch={{
+              batchId: 'SAVA-2026-A33',
+              harvestDate: '2026-02-15',
+              region: 'Sambava / Antalaha',
+              moistureContent: '~33%',
+              vanillinLevel: '~2%',
+              certification: 'Organic / Fairtrade',
+            }}
+          />
         </div>
       </section>
 
@@ -194,7 +208,7 @@ export function Products() {
               </p>
 
               <Link
-                to="/contact"
+                to={localizedPath('/contact')}
                 className="inline-flex items-center justify-center px-10 py-5 bg-white hover:bg-amber-50 text-amber-950 font-semibold rounded-xl transition-all hover:scale-105 shadow-2xl text-lg group"
               >
                 {t.home.contactUs}
