@@ -1,13 +1,11 @@
 import { MapPin, Award, Shield, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { useTranslation } from '../hooks/useTranslation';
 import { SectionWithIcon } from './why-choose-us/components/SectionWithIcon';
 
 export function WhyChooseUs() {
   const t = useTranslation();
-  const localizedPath = useLocalizedPath();
 
   const trustItems = [
     t.contact.beforeOrderMinimum,
@@ -109,7 +107,7 @@ export function WhyChooseUs() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-serif mb-6">{t.home.readyTitle}</h2>
           <p className="text-xl text-amber-100 mb-8 max-w-2xl mx-auto">{t.home.readySubtitle}</p>
-          <Link to={localizedPath('/contact')} className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-100 text-amber-900 rounded transition-colors">
+          <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-100 text-amber-900 rounded transition-colors">
             {t.home.contactUs}
           </Link>
         </div>
