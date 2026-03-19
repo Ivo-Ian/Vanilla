@@ -81,11 +81,57 @@ export function SeoMeta() {
 
     const { title, description } = pages[pathname] ?? fallback;
 
+    const seoKeywordsByLanguage: Record<string, string[]> = {
+      en: [
+        'vanilla',
+        'madagascar',
+        'exportation',
+        'quality',
+        'bourbon vanilla',
+        'vanilla beans',
+        'wholesale vanilla',
+        'grade A vanilla',
+        'vanilla seeds',
+        'bulk vanilla beans',
+        'SAVA region vanilla',
+        'direct export Madagascar',
+      ],
+      fr: [
+        'vanille',
+        'madagascar',
+        'exportation',
+        'qualité',
+        'vanille bourbon',
+        'gousses de vanille',
+        'vanille en gros',
+        'vanille grade A',
+        'graines de vanille',
+        'gousses de vanille en gros',
+        'vanille région SAVA',
+        'export direct Madagascar',
+      ],
+      mg: [
+        'lavanila',
+        'madagasikara',
+        'fanondranana',
+        'kalitao',
+        'lavanila bourbon',
+        'tsaramaso lavanila',
+        'lavanila ambongadiny',
+        'lavanila grade A',
+        'voa lavanila',
+        'tsaramaso lavanila ambongadiny',
+        'lavanila faritra SAVA',
+        'fanondranana mivantana Madagasikara',
+      ],
+    };
+    const seoKeywords = seoKeywordsByLanguage[language] ?? seoKeywordsByLanguage.en;
+
     document.documentElement.lang = language;
     document.title = title;
 
     setMeta('name', 'description', description);
-    setMeta('name', 'keywords', 'vanilla, madagascar, exportation, quality, bourbon vanilla, vanilla beans, wholesale vanilla, grade A vanilla, vanilla seeds');
+    setMeta('name', 'keywords', seoKeywords.join(', '));
     setMeta('name', 'robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
 
     setMeta('property', 'og:type', 'website');
@@ -127,7 +173,7 @@ export function SeoMeta() {
       currenciesAccepted: 'USD, EUR',
       openingHours: 'Mo,Tu,We,Th,Fr 08:00-17:00',
       priceRange: '$$$',
-      keywords: ['vanilla', 'madagascar', 'exportation', 'quality'],
+      keywords: seoKeywords,
     });
 
     setJsonLd('website-jsonld', {
