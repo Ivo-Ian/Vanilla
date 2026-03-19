@@ -15,7 +15,12 @@ export function AppHeader() {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="/logo-temp.png"
+              alt="HRS Vanilla logo"
+              className="h-10 w-10 object-contain"
+            />
             <div className="text-2xl font-serif text-amber-900">
               HRS Vanilla
             </div>
