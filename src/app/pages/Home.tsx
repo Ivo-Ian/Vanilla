@@ -4,6 +4,7 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useTranslation } from '../hooks/useTranslation';
 import { FeatureCard } from './home/components/FeatureCard';
 import { FeaturedProductCard } from './home/components/FeaturedProductCard';
+import heroPic from '../../photos/heroPic.jpg';
 
 export function Home() {
   const t = useTranslation();
@@ -27,7 +28,7 @@ export function Home() {
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1512372388054-a322888e67a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwdmFuaWxsYSUyMGJlYW5zJTIwcG9kc3xlbnwxfHx8fDE3NzIyODMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src={heroPic}
             alt="Premium vanilla beans"
             className="w-full h-full object-cover"
           />

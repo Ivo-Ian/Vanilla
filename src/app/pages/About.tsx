@@ -1,7 +1,7 @@
 import { Award, ShieldCheck, Handshake, MessageCircleHeart } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useTranslation } from '../hooks/useTranslation';
-
+import cult from '../../photos/cult.jpg';
 export function About() {
   const t = useTranslation();
   
@@ -51,7 +51,7 @@ export function About() {
 
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1674653495432-732d7328fa5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kcyUyMGhhcnZlc3RpbmclMjBhZ3JpY3VsdHVyZXxlbnwxfHx8fDE3NzIyODMzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src={cult}
                 alt="Hands harvesting"
                 className="w-full h-full object-cover"
               />

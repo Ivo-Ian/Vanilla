@@ -13,7 +13,7 @@ import packaging from '../../photos/packaging.jpg';
 import certificat from '../../photos/certificat.png';
 import sortingV2 from '../../photos/vanilla-sorting.jpeg';
 import rulingBeans from '../../photos/vanilla-tk-pic.jpeg';
-
+import cult from '../../photos/cult.jpg';
 
 export function Process() {
   const t = useTranslation();
@@ -45,7 +45,7 @@ export function Process() {
       icon: Package,
       images: [
         {
-          url: photo4,
+          url: cult,
           alt: 'Harvesting vanilla beans',
         }
       ],

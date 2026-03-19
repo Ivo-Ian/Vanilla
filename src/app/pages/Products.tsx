@@ -16,7 +16,8 @@ import gourmetPic from '../../photos/vanilla-gourmet.jpeg';
 import bGrade from '../../photos/b-grade-vanilla.jpeg';
 import beans from '../../photos/vanilla-beans.jpeg';
 import vanillaPowder from '../../photos/vanilla-prowder.jpeg';
-
+import heroPic from '../../photos/heroPic.jpg';
+// import  from '../../photos/heroPic.jpg';
 export function Products() {
   const t = useTranslation();
 
@@ -101,7 +102,7 @@ export function Products() {
           className="absolute inset-0"
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1512372388054-a322888e67a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwdmFuaWxsYSUyMGJlYW5zJTIwcG9kc3xlbnwxfHx8fDE3NzIyODMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src={heroPic}
             alt="Premium vanilla beans"
             className="w-full h-full object-cover"
           />

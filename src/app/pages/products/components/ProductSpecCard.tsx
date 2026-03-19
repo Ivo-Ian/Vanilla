@@ -1,7 +1,7 @@
 import { Check } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../../../components/figma/ImageWithFallback';
-
+// import horizon from '../../photos/horizon.jpg';
 interface ProductSpecCardProps {
   title: string;
   specsLabel: string;
