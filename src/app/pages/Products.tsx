@@ -56,10 +56,7 @@ export function Products() {
       title: t.products.gradeBTitle,
       specsLabel: t.products.specsLabel,
       priceLabel: t.products.priceBySizeLabel,
-      priceTiers: [
-        { dimension: '10cm - 13cm', price: t.products.gradeBPrice1013 },
-        { dimension: '14cm - 16cm', price: t.products.gradeBPrice1416 },
-      ],
+      priceTiers: [{ dimension: '14cm - 16cm', price: t.products.gradeBPrice1416 }],
       image: bGrade,
       specs: [
         t.products.gradeBLength,
@@ -74,10 +71,7 @@ export function Products() {
       title: t.products.gradeCTitle,
       specsLabel: t.products.specsLabel,
       priceLabel: t.products.priceBySizeLabel,
-      priceTiers: [
-        { dimension: '10cm - 13cm', price: t.products.gradeCPrice1013 },
-        { dimension: '14cm - 16cm', price: t.products.gradeCPrice1416 },
-      ],
+      priceTiers: [{ dimension: '10cm - 14cm', price: t.products.gradeCPrice1013 }],
       image: bGrade,
       specs: [
         t.products.gradeCLength,
