@@ -7,9 +7,11 @@ interface ProductSpecCardProps {
   specsLabel: string;
   specs: string[];
   image?: string;
+  priceLabel?: string;
+  priceTiers?: Array<{ dimension: string; price: string }>;
 }
 
-export function ProductSpecCard({ title, specsLabel, specs, image }: ProductSpecCardProps) {
+export function ProductSpecCard({ title, specsLabel, specs, image, priceLabel, priceTiers }: ProductSpecCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -33,6 +35,25 @@ export function ProductSpecCard({ title, specsLabel, specs, image }: ProductSpec
         <h3 className="text-2xl md:text-3xl font-serif text-neutral-900 mb-4 group-hover:text-amber-900 transition-colors duration-300">
           {title}
         </h3>
+
+        {priceTiers && priceTiers.length > 0 && (
+          <div className="mb-6 rounded-xl border border-amber-200/70 bg-amber-50/60 p-4">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-amber-800 mb-3">
+              {priceLabel}
+            </p>
+            <div className="space-y-2">
+              {priceTiers.map((tier) => (
+                <div
+                  key={`${tier.dimension}-${tier.price}`}
+                  className="flex items-center justify-between gap-4 rounded-lg bg-white/80 border border-amber-100 px-3 py-2"
+                >
+                  <span className="text-sm font-medium text-neutral-700">{tier.dimension}</span>
+                  <span className="text-sm font-semibold text-amber-900">{tier.price}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="space-y-6">
           <div className="flex items-center space-x-2">

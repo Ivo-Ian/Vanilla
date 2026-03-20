@@ -4,12 +4,6 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useTranslation } from '../hooks/useTranslation';
 import { ProductSpecCard } from './products/components/ProductSpecCard';
 
-import photo1 from '../../photos/1.jpg';
-import photo2 from '../../photos/2.jpg';
-import photo3 from '../../photos/3.jpg';
-import photo4 from '../../photos/4.jpg';
-import photo5 from '../../photos/5.jpg';
-import photo6 from '../../photos/6.jpg';
 import photoPackaging from '../../photos/packaging.jpg';
 import tkPic from '../../photos/vanilla-tk-black.jpeg';
 import gourmetPic from '../../photos/vanilla-gourmet.jpeg';
@@ -25,6 +19,11 @@ export function Products() {
     {
       title: t.products.tkNoirTitle,
       specsLabel: t.products.specsLabel,
+      priceLabel: t.products.priceBySizeLabel,
+      priceTiers: [
+        { dimension: '14cm - 16cm', price: t.products.tkNoirPrice14 },
+        { dimension: '17cm - 18cm', price: t.products.tkNoirPrice16 },
+      ],
       image: tkPic,
       specs: [
         t.products.tkNoirLength,
@@ -38,6 +37,11 @@ export function Products() {
     {
       title: t.products.gourmetTitle,
       specsLabel: t.products.specsLabel,
+      priceLabel: t.products.priceBySizeLabel,
+      priceTiers: [
+        { dimension: '14cm - 16cm', price: t.products.gourmetPrice14 },
+        { dimension: '17cm - 18cm', price: t.products.gourmetPrice18 },
+      ],
       image: gourmetPic,
       specs: [
         t.products.gourmetLength,
@@ -51,6 +55,11 @@ export function Products() {
     {
       title: t.products.gradeBTitle,
       specsLabel: t.products.specsLabel,
+      priceLabel: t.products.priceBySizeLabel,
+      priceTiers: [
+        { dimension: '10cm - 13cm', price: t.products.gradeBPrice1013 },
+        { dimension: '14cm - 16cm', price: t.products.gradeBPrice1416 },
+      ],
       image: bGrade,
       specs: [
         t.products.gradeBLength,
@@ -64,6 +73,11 @@ export function Products() {
     {
       title: t.products.gradeCTitle,
       specsLabel: t.products.specsLabel,
+      priceLabel: t.products.priceBySizeLabel,
+      priceTiers: [
+        { dimension: '10cm - 13cm', price: t.products.gradeCPrice1013 },
+        { dimension: '14cm - 16cm', price: t.products.gradeCPrice1416 },
+      ],
       image: bGrade,
       specs: [
         t.products.gradeCLength,
@@ -80,12 +94,16 @@ export function Products() {
     {
       title: t.products.powderTitle,
       specsLabel: t.products.specsLabel,
+      priceLabel: t.products.priceBySizeLabel,
+      priceTiers: [{ dimension: t.products.perKgLabel, price: t.products.powderPrice }],
       image: vanillaPowder,
       specs: [t.products.powderDesc],
     },
     {
       title: t.products.seedsTitle,
       specsLabel: t.products.specsLabel,
+      priceLabel: t.products.priceBySizeLabel,
+      priceTiers: [{ dimension: t.products.perKgLabel, price: t.products.seedsPrice }],
       image: beans,
       specs: [t.products.seedsDesc],
     }
