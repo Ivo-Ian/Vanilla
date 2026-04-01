@@ -45,15 +45,7 @@ export function useContactForm() {
     );
 
     const mailtoUrl = `mailto:soloniaina@hrsmg.com?subject=${subject}&body=${body}`;
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.src = mailtoUrl;
-    document.body.appendChild(iframe);
-    
-    // Clean up
-    setTimeout(() => {
-      document.body.removeChild(iframe);
-    }, 100);
+    window.location.href = mailtoUrl;
 
     setIsSubmitted(true);
     setTimeout(() => {
